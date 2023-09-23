@@ -6,6 +6,6 @@ public class DisappearOnCollision : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
