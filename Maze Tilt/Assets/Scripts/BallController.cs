@@ -19,12 +19,7 @@ public class BallController : MonoBehaviour
 
             Vector3 moveDirection = new Vector3(horizontalInput, 0, 0);
 
-            mRigidBody.AddForce(moveDirection * moveForce);
-
-            if (Input.GetButtonDown("Jump"))
-            {
-                mRigidBody.AddForce(Vector3.up * 200);
-            }
+            mRigidBody.AddForce(-moveDirection * moveForce);
         }
     }
 }
