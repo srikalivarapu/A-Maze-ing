@@ -3,8 +3,8 @@ using UnityEngine;
 public class Tilt : MonoBehaviour
 {
     private float rotationAngle = 0.0f;
-    public float rotationSpeed = 30.0f;
-    public float maxRotationAngle = 5.0f;
+    public float rotationSpeed = 55.0f;
+    public float maxRotationAngle = 10.0f;
     private Vector3 mazeCenter = new Vector3(0, 0, 0);
     private bool isRotating = false;
     private float targetRotationAngle = 0.0f;
