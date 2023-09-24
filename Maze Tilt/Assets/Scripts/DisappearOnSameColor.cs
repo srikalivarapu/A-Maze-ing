@@ -9,7 +9,7 @@ public class DisappearOnSameColor : MonoBehaviour
         if (GetComponent<MeshRenderer>().material.color == other.gameObject.GetComponent<MeshRenderer>().material.color)
         {
             gameObject.SetActive(false);
-
+            other.gameObject.GetComponent<MeshRenderer>().material.color = Color.white;
         }
     }
 }
