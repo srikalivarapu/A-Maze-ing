@@ -6,7 +6,7 @@ public class InheritColor : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<MeshRenderer>().name != "ColorGate") {
+        if (other.gameObject.GetComponent<MeshRenderer>().name != "ColorGate" && other.gameObject.GetComponent<MeshRenderer>().name != "Destination") {
             if (other.gameObject.GetComponent<MeshRenderer>().material.color != Color.white)
             {
                 if (GetComponent<MeshRenderer>().material.color == Color.white)
