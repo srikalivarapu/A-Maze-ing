@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class InheritColor : MonoBehaviour
 {
-    public SaturationTransitionController saturationTransitionController; // Assign in the Inspector
-    public GameObject againstText;  // Reference to your 'againtext' Text element, assign in the Inspector
+    [SerializeField] public SaturationTransitionController saturationTransitionController; // Assign in the Inspector
+    [SerializeField] public GameObject againstText;  // Reference to your 'againtext' Text element, assign in the Inspector
 
     private void OnCollisionEnter(Collision other)
     {

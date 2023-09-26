@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Destination : MonoBehaviour
 {
-    public GameObject againtext;
+    [SerializeField] public GameObject againtext;
 
     private void OnCollisionEnter(Collision other)
     {

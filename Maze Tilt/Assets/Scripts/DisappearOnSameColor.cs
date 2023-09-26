@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DisappearOnSameColor : MonoBehaviour
 {
-    public GameObject againtext;
+    [SerializeField] public GameObject againtext;
     private void OnCollisionEnter(Collision other)
     {
         if (GetComponent<MeshRenderer>().material.color == other.gameObject.GetComponent<MeshRenderer>().material.color)

@@ -15,8 +15,8 @@ public class SaturationTransitionController : MonoBehaviour
     private bool isTransitioning = false;
 
     private int clickCount = 0;
-    public GameObject yourButtonGameObject;
-    public GameObject hinttext;
+    [SerializeField] public GameObject yourButtonGameObject;
+    [SerializeField] public GameObject hinttext;
 
     void Start()
     {
