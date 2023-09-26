@@ -1,27 +1,60 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InheritColor : MonoBehaviour
 {
+    [SerializeField] public SaturationTransitionController saturationTransitionController; // Assign in the Inspector
+    [SerializeField] public GameObject againstText;  // Reference to your 'againtext' Text element, assign in the Inspector
+
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<MeshRenderer>().name != "ColorGate" && other.gameObject.GetComponent<MeshRenderer>().name != "Destination") {
-            if (other.gameObject.GetComponent<MeshRenderer>().material.color != Color.white)
+        MeshRenderer otherMeshRenderer = other.gameObject.GetComponent<MeshRenderer>();
+
+        if (otherMeshRenderer != null)
+        {
+            if (otherMeshRenderer.name != "ColorGate" && otherMeshRenderer.name != "Destination")
             {
-                if (GetComponent<MeshRenderer>().material.color == Color.white)
+                if (otherMeshRenderer.material.color != Color.white)
                 {
-                    GetComponent<MeshRenderer>().material.color = other.gameObject.GetComponent<MeshRenderer>().material.color;
-                }
-                else
-                {
-                    GetComponent<MeshRenderer>().material.color = (GetComponent<MeshRenderer>().material.color + other.gameObject.GetComponent<MeshRenderer>().material.color) / 2;
-                }
+                    MeshRenderer thisMeshRenderer = GetComponent<MeshRenderer>();
+                    if (thisMeshRenderer != null)
+                    {
+                        Color otherColor = otherMeshRenderer.material.color;
+                        Color thisColor = thisMeshRenderer.material.color;
 
+                        if (thisColor == Color.white)
+                        {
+                            thisMeshRenderer.material.color = otherColor;
+                        }
+                        else
+                        {
+                            thisMeshRenderer.material.color = (thisColor + otherColor) / 2;
+                        }
+                    }
+                }
+            }
+            else if (otherMeshRenderer.name == "ColorGate" && saturationTransitionController != null)
+            {
+                // Call StartSaturationTransition function when hitting the ColorGate
+                saturationTransitionController.StartSaturationTransition();
 
+                // Show the 'againstText' when hitting the ColorGate
+                againstText.SetActive(true);
             }
         }
-        
     }
-        
+
+    private void OnCollisionExit(Collision other)
+    {
+        MeshRenderer otherMeshRenderer = other.gameObject.GetComponent<MeshRenderer>();
+
+        if (otherMeshRenderer != null)
+        {
+            if (otherMeshRenderer.name == "ColorGate" || otherMeshRenderer.name == "Destination")
+            {
+                // Hide the 'againstText' when leaving ColorGate or Destination
+                againstText.SetActive(false);
+            }
+        }
+    }
 }
