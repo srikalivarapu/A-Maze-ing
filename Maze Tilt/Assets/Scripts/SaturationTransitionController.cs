@@ -66,8 +66,6 @@ public class SaturationTransitionController : MonoBehaviour
         }
     }
 
-
-
     public void StartSaturationTransition()
     {
         // Reset initialSaturation and set targetSaturation to 0 to start the transition to 0

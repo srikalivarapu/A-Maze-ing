@@ -1324,6 +1324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bbc5a6ad58514f15aa8d0961fa704b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saturationTransitionController: {fileID: 963194235}
 --- !u!54 &829884283
 Rigidbody:
   m_ObjectHideFlags: 0
