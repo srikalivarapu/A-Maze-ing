@@ -6,6 +6,7 @@ public class DisappearOnSameColor : MonoBehaviour
 {
     [SerializeField] public GameObject againtext;
     private void OnCollisionEnter(Collision other)
+
     {
         if (GetComponent<MeshRenderer>().material.color == other.gameObject.GetComponent<MeshRenderer>().material.color)
         {

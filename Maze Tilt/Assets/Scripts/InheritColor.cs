@@ -29,6 +29,7 @@ public class InheritColor : MonoBehaviour
                         else
                         {
                             thisMeshRenderer.material.color = (thisColor + otherColor) / 2;
+
                         }
                     }
                 }
