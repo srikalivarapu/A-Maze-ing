@@ -8,4 +8,8 @@ public class DisappearOnCollision : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void OnCollisionExit(Collision other)
+    {
+        gameObject.SetActive(false);
+    }
 }

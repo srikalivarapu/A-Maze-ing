@@ -15,12 +15,14 @@ public class SaturationTransitionController : MonoBehaviour
     private bool isTransitioning = false;
 
     private int clickCount = 0;
-    public GameObject yourButtonGameObject; 
+    public GameObject yourButtonGameObject;
+    public GameObject hinttext;
 
     void Start()
     {
         postProcessVolume = GetComponent<PostProcessVolume>();
         colorGrading = postProcessVolume.profile.GetSetting<ColorGrading>();
+        StartSaturationTransition();
     }
 
     void Update()
@@ -62,6 +64,7 @@ public class SaturationTransitionController : MonoBehaviour
             {
                 // Disable the button (hide the whole GameObject) after the second click
                 yourButtonGameObject.SetActive(false);
+                hinttext.SetActive(false);
             }
         }
     }

@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public SaturationTransitionController saturationTransitionController;  // Reference to your SaturationTransitionController
+    //public SaturationTransitionController SaturationTransitionController;  
 
     void Awake()
     {
@@ -24,20 +24,18 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Check if we have a reference to the SaturationTransitionController
-        if (saturationTransitionController != null)
-        {
-            // Start the saturation transition
-            saturationTransitionController.StartSaturationTransition();
-        }
-        else
-        {
-            Debug.LogError("SaturationTransitionController reference is missing!");
-        }
+        //if (SaturationTransitionController != null)
+        //{
+        //    //SaturationTransitionController.StartSaturationTransition();
+        //}
+        //else
+        //{
+        //    Debug.LogError("SaturationTransitionController reference is missing!");
+        //}
     }
 
-    public void Win()
-    {
-        SceneManager.LoadScene(2);
-    }
+    //public void Win()
+    //{
+    //    SceneManager.LoadScene(2);
+    //}
 }
